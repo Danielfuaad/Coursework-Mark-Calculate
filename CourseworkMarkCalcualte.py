@@ -88,3 +88,18 @@ def addMiniProject(self):
     self.txtProduct_Presentation.insert(0, "")
     Label(self,text = "10%").grid(row=12,column=2)
     
+def FinalAssessment(self):
+    Label(self, text = "Final Assessment",
+          font = self.headerFont).grid(row = 13, columnspan = 2)
+    Label(self,text = "20%",font = self.headerFont).grid(row=13,column=3)
+    
+    Label(self, text = "Final Assessment").grid(row = 14, column = 0)
+    self.txtFinal = Entry(self)
+    self.txtFinal.grid(row = 14, column = 1)
+    self.txtFinal.insert(0, "")
+    Label(self,text = "10%").grid(row=14,column=2)
+
+def addOutput(self):
+    self.btnCalc = Button(self, text = "calculate grade")
+    self.btnCalc.grid(row = 15, column = 2)
+    self.btnCalc["command"] = self.calculate
