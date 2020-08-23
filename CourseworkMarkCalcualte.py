@@ -5,7 +5,7 @@ class App(Tk):
         Tk.__init__(self)
 
         self.headerFont = ("Helvetica", "16", "bold italic")
-    
+        self.downFont = ("Helvetica", "60", "bold italic")
         self.title("Coursework Mark Calculate")
         self.addQuizzes()
         self.addLabAssessment()
@@ -14,7 +14,7 @@ class App(Tk):
         self.FinalAssessment()
         self.addOutput()
         
-        self.geometry("500x500")
+        self.geometry("500x550")
     
     def addQuizzes(self):
         Label(self, text = "Quizzes",font = self.headerFont).grid(row=0,column =1)
@@ -110,7 +110,7 @@ class App(Tk):
         self.lblNeed = Label(self, bg = "#fff", anchor = "w", relief = "groove")
         self.lblNeed.grid(row = 18, column = 1, sticky = "we")
 
-        
+   
     def calculate(self):
         Quiz1 = int(self.txtQuiz1.get())
         Quiz2 = int(self.txtQuiz2.get())
@@ -132,16 +132,29 @@ class App(Tk):
         Report = int(self.txtReport.get())
         Product = int(self.txtProduct.get())
 
-        MintProjectTot=Report+Product
+        MiniProjectTot=Report+Product
 
         Finals = int(self.txtFinal.get()) 
 
-        total = (QuizTot) + (LabAssessmentTot) + (LabTestTot)+(MintProjectTot)+(Finals)
+        total = (QuizTot) + (LabAssessmentTot) + (LabTestTot)+(MiniProjectTot)+(Finals)
         self.lblTotal["text"] = "%.2f" % total
     
         NeedPass=100-total
-        self.lblNeed["text"] = "%.2f" % NeedPass
-
+        self.lblNeed["text"] = "%.2f" % NeedPass 
+        
+        if total >= 99.00:
+            Label(self, text = "A",font=self.downFont,bg="black",fg="green").grid(row = 19, column = 1)
+        elif total >= 80.00: 
+            Label(self, text = "B",font=self.downFont,bg="black",fg="yellow").grid(row = 19, column = 1)
+        elif total >= 70.00:
+            Label(self, text = "C",font=self.downFont,bg="black",fg="yellow").grid(row = 19, column = 1)
+        elif total >= 60.00: 
+            Label(self, text = "D",font=self.downFont,bg="black",fg="yellow").grid(row = 19, column = 1)
+        else : 
+            Label(self, text = "FAIL",font=self.downFont,bg="black",fg="red").grid(row = 19, column = 1)      
+    
+        
+        
 def main():
     app = App()
     app.mainloop()
