@@ -70,3 +70,21 @@ def addLabTest(self):
     self.txtTest2.grid(row = 9, column = 1)
     self.txtTest2.insert(0, "")
     Label(self,text = "10%").grid(row=9,column=2)
+
+def addMiniProject(self):
+    Label(self, text = "Mini Project",
+          font = self.headerFont).grid(row=10,column =0)
+    Label(self,text = "20%",font = self.headerFont).grid(row=0,column=3)
+
+    Label(self, text = "Report").grid(row = 11, column = 0)
+    self.txtReport = Entry(self)
+    self.txtReport.grid(row = 11, column = 1)
+    self.txtReport.insert(0, "")
+    Label(self,text = "10%").grid(row=11,column=2)
+    
+    Label(self, text = "Product & Presentation").grid(row = 12, column = 0)
+    self.txtProduct_Presentation = Entry(self)
+    self.txtProduct_Presentationt.grid(row = 12, column = 1)
+    self.txtProduct_Presentation.insert(0, "")
+    Label(self,text = "10%").grid(row=12,column=2)
+    
