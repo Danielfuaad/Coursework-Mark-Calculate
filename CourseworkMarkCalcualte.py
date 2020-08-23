@@ -34,7 +34,7 @@ def addQuizzes(self):
 def addLabAssessment(self):
     Label(self, text = "Lab Assessment",
           font = self.headerFont).grid(row=3,column =1)
-    Label(self,text = "10%",font = self.headerFont).grid(row=0,column=3)
+    Label(self,text = "25%",font = self.headerFont).grid(row=0,column=3)
 
     Label(self, text = "Lab Asessment 1").grid(row = 4, column = 0)
     self.txtLab1 = Entry(self)
@@ -53,3 +53,20 @@ def addLabAssessment(self):
     self.txtLab3.grid(row = 6, column = 1)
     self.txtLab3.insert(0, "")
     Label(self,text = "10%").grid(row=6,column=2)
+
+def addLabTest(self):
+    Label(self, text = "Lab Test",
+          font = self.headerFont).grid(row=7,column =0)
+    Label(self,text = "20%",font = self.headerFont).grid(row=0,column=3)
+    
+    Label(self, text = "Lab Assignment").grid(row = 8, column = 0)
+    self.txtLabTest1 = Entry(self)
+    self.txtLabTest1.grid(row = 8, column = 1)
+    self.txtLabTest1.insert(0, "")
+    Label(self,text = "10%").grid(row=8,column=2)
+
+    Label(self, text = "Code Review").grid(row = 9, column = 0)
+    self.txtTest2 = Entry(self)
+    self.txtTest2.grid(row = 9, column = 1)
+    self.txtTest2.insert(0, "")
+    Label(self,text = "10%").grid(row=9,column=2)
