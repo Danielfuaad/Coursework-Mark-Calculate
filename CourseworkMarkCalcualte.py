@@ -7,14 +7,15 @@ class App(Tk):
     self.headerFont = ("Helvetica", "16", "bold italic")
     
     self.title("Coursework Mark Calculate")
-    self.addQuizzes()
-    self.addLabs()
-    self.addExams()
-    self.addProj()
+    self.addQuiz()
+    self.addLabAssessment()
+    self.addLabTest()
+    self.addMiniProject()
+    self.FinalAssessment()
     self.addOutput()
-    self.geometry("500x350")
+    self.geometry("500x500")
 
-def addQuizzes(self):
+def addQuiz(self):
     Label(self, text = "Quizzes",
           font = self.headerFont).grid(row=0,column =1)
     Label(self,text = "10%",font = self.headerFont).grid(row=0,column=3)
@@ -103,3 +104,51 @@ def addOutput(self):
     self.btnCalc = Button(self, text = "calculate grade")
     self.btnCalc.grid(row = 15, column = 2)
     self.btnCalc["command"] = self.calculate
+
+
+    Label(self, text = "Overall Percent").grid(row = 16, column = 0)
+    self.lblTotal = Label(self, bg = "#fff", anchor = "w", relief = "groove")
+    self.lblTotal.grid(row = 17, column = 1, sticky = "we")
+
+    Label(self, text = "Need To Pass").grid(row = 18, column = 0)
+    self.lblNeed = Label(self, bg = "#fff", anchor = "w", relief = "groove")
+    self.lblNeed.grid(row = 19, column = 1, sticky = "we")
+
+def calculate(self):
+    Quiz1 = int(self.txtQuiz1.get())
+    Quiz2 = int(self.txtQuiz2.get())
+    Quiz3 = int(self.txtQuiz3.get())
+
+    QuizTot = Quiz1 + Quiz2 + Quiz3  
+    
+    Lab1 = int(self.txtLab1.get())
+    Lab2 = int(self.txtLab2.get())
+    Lab3 = int(self.txtLab3.get())
+    
+    LabAssessmentTot= Lab1 + Lab2 + Lab3
+
+    LabTest1 = int(self.txtLabTest1.get())
+    LabTest2 = int(self.txtLabTest2.get())
+
+    LabTestTot = LabTest1 + LabTest2
+
+    Report = int(self.txtReport.get())
+    Product = int(self.txtProduct_Presentation.get())
+
+    MintProjectTot=Report+Product
+
+    Finals = int(self.txtFinal.get()) 
+
+
+    total = (QuizTot) + (LabAssessmentTot) + (LabTestTot)+(MintProjectTot)+(Finals)
+    self.lblTotal["text"] = "%.2f" % total
+    
+    NeedPass=100-total
+    self.lblNeed["text"] = "%.2f" % NeedPass
+
+def main():
+    app = App()
+    app.mainloop()
+
+if __name__ == "__main__":
+  main()
