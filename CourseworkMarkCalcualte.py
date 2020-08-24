@@ -15,7 +15,7 @@ class App(Tk):
         self.FinalAssessment()
         self.addOutput()
         
-        self.geometry("500x560")
+        self.geometry("500x550")
     
     
     def addQuizzes(self):
@@ -110,9 +110,7 @@ class App(Tk):
         Label(self, text = "Need To Pass").grid(row = 21, column = 0)
         self.lblNeed = Label(self, bg = "#fff", anchor = "w", relief = "groove")
         self.lblNeed.grid(row = 21, column = 1, sticky = "we")
-
-
-   
+ 
     def calculate(self):
         Quiz1 = int(self.txtQuiz1.get())
         Quiz2 = int(self.txtQuiz2.get())
