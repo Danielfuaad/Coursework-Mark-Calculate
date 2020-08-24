@@ -18,6 +18,7 @@ class App(Tk):
         self.geometry("500x550")
     
     
+
     def addQuizzes(self):
         Label(self, text = "Quizzes",font = self.headerFont).grid(row=1,column =1)
         Label(self,text = "10%",font = self.headerFont).grid(row=1,column=3)
@@ -146,7 +147,11 @@ class App(Tk):
             Label(self, text = "A",font=self.downFont,bg="black",fg="green").grid(row = 22, column = 1)
         elif total >= 70.00: 
             Label(self, text = "B",font=self.downFont,bg="black",fg="yellow").grid(row = 22, column = 1)
+<<<<<<< HEAD
         elif total >= 50.00:
+=======
+        elif total >= 60.00:
+>>>>>>> dcb457c6d7a4b1237d66fba3f9abcabe83f23d2e
             Label(self, text = "C",font=self.downFont,bg="black",fg="yellow").grid(row = 22, column = 1)
         else : 
             Label(self, text = "FAIL",font=self.downFont,bg="black",fg="red").grid(row = 22, column = 1)      
