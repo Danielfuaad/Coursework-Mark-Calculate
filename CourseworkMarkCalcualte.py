@@ -74,7 +74,7 @@ class App(Tk):
 
     def addMiniProject(self):
         Label(self, text = "Mini Project",font = self.headerFont).grid(row=11,column =1)
-        Label(self,text = "25%",font = self.headerFont).grid(row=10,column=3)
+        Label(self,text = "25%",font = self.headerFont).grid(row=11,column=3)
 
         Label(self, text = "Report").grid(row = 12, column = 0)
         self.txtReport = Entry(self)
@@ -90,7 +90,7 @@ class App(Tk):
     
     def FinalAssessment(self):
         Label(self, text = "Final Assessment",font = self.headerFont).grid(row = 14, column = 1)
-        Label(self,text = "20%",font = self.headerFont).grid(row=13,column=3)
+        Label(self,text = "20%",font = self.headerFont).grid(row=14,column=3)
     
         Label(self, text = "Final Assessment").grid(row = 15, column = 0)
         self.txtFinal = Entry(self)
