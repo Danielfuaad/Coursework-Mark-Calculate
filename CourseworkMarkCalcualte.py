@@ -33,7 +33,7 @@ class App(Tk):
         self.txtQuiz2 = Entry(self)
         self.txtQuiz2.grid(row = 3, column = 1)
         self.txtQuiz2.insert(0, "")
-        Label(self,text = "5%").grid(row=3,column=2)
+        Label(self,text = "6%").grid(row=3,column=2)
 
     def addLabAssessment(self):
         Label(self, text = "Lab Assessment",font = self.headerFont).grid(row=4,column =1)
