@@ -18,6 +18,7 @@ class App(Tk):
         self.geometry("500x550")
     
     
+    
     def addQuizzes(self):
         Label(self, text = "Quizzes",font = self.headerFont).grid(row=1,column =1)
         Label(self,text = "10%",font = self.headerFont).grid(row=1,column=3)
